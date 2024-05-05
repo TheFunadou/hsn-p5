@@ -1,0 +1,109 @@
+{
+	"name": "PremierLeagueTable",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "SQLDatabase",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "posicion",
+				"type": "varchar"
+			},
+			{
+				"name": "puntos",
+				"type": "varchar"
+			},
+			{
+				"name": "dif_goles",
+				"type": "varchar"
+			},
+			{
+				"name": "id_equipo",
+				"type": "varchar"
+			},
+			{
+				"name": "nombre_equipo",
+				"type": "varchar"
+			},
+			{
+				"name": "partidos_jugados",
+				"type": "varchar"
+			},
+			{
+				"name": "victorias",
+				"type": "varchar"
+			},
+			{
+				"name": "empates",
+				"type": "varchar"
+			},
+			{
+				"name": "derrotas",
+				"type": "varchar"
+			},
+			{
+				"name": "goles_favor",
+				"type": "varchar"
+			},
+			{
+				"name": "goles_contra",
+				"type": "varchar"
+			},
+			{
+				"name": "local",
+				"type": "varchar"
+			},
+			{
+				"name": "victorias_local",
+				"type": "varchar"
+			},
+			{
+				"name": "empates_local",
+				"type": "varchar"
+			},
+			{
+				"name": "derrotas_local",
+				"type": "varchar"
+			},
+			{
+				"name": "goles_favor_local",
+				"type": "varchar"
+			},
+			{
+				"name": "home_contra_aganist",
+				"type": "varchar"
+			},
+			{
+				"name": "visitante",
+				"type": "varchar"
+			},
+			{
+				"name": "victorias_visitante",
+				"type": "varchar"
+			},
+			{
+				"name": "empates_visitante",
+				"type": "varchar"
+			},
+			{
+				"name": "derrotas_visitante",
+				"type": "varchar"
+			},
+			{
+				"name": "goles_favor_visitante",
+				"type": "varchar"
+			},
+			{
+				"name": "goles_contra_visitante",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "PREMIERLEAGUE2023"
+		}
+	}
+}

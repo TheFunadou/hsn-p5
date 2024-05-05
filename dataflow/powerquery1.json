@@ -1,0 +1,20 @@
+{
+	"name": "powerquery1",
+	"properties": {
+		"type": "WranglingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"name": "PremierLeagueTable",
+					"script": "source(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tisolationLevel: 'READ_UNCOMMITTED',\n\tformat: 'table') ~>  PremierLeagueTable",
+					"dataset": {
+						"referenceName": "PremierLeagueTable",
+						"type": "DatasetReference"
+					}
+				}
+			],
+			"script": "section Section1;\r\nshared PremierLeagueTable = let AdfDoc = Sql.Database(\"practica5hsn-jbc.database.windows.net\", \"hsn-practica5\", [CreateNavigationProperties = false]), InputTable = AdfDoc{[Schema=\"dbo\",Item=\"PREMIERLEAGUE2023\"]}[Data] in InputTable;\r\nshared UserQuery = let Source = #\"PremierLeagueTable\",\r\n  #\"Tipo de columna cambiado\" = Table.TransformColumnTypes(Source, {{\"puntos\", Int64.Type}, {\"dif_goles\", Int64.Type}, {\"id_equipo\", Int64.Type}, {\"partidos_jugados\", Int64.Type}, {\"victorias\", Int64.Type}, {\"empates\", Int64.Type}, {\"derrotas\", Int64.Type}, {\"goles_favor\", Int64.Type}, {\"goles_contra\", Int64.Type}, {\"local\", Int64.Type}, {\"victorias_local\", Int64.Type}, {\"empates_local\", Int64.Type}, {\"derrotas_local\", Int64.Type}, {\"goles_favor_local\", Int64.Type}}),\r\n  #\"Columnas con nombre cambiado\" = Table.RenameColumns(#\"Tipo de columna cambiado\", {{\"home_contra_aganist\", \"goles_contra_local\"}}),\r\n  #\"Tipo de columna cambiado 1\" = Table.TransformColumnTypes(#\"Columnas con nombre cambiado\", {{\"goles_contra_local\", Int64.Type}, {\"visitante\", Int64.Type}, {\"victorias_visitante\", Int64.Type}, {\"empates_visitante\", Int64.Type}, {\"derrotas_visitante\", Int64.Type}, {\"goles_favor_visitante\", Int64.Type}, {\"goles_contra_visitante\", Int64.Type}}),\r\n  #\"Columna condicional insertada\" = Table.AddColumn(#\"Tipo de columna cambiado 1\", \"clasificacion\", each if [posicion] = \"1\" then \"UEFA CHAMPIONS LEAGUE\" else if [posicion] = \"2\" then \"UEFA CHAMPIONS LEAGUE\" else if [posicion] = \"3\" then \"UEFA CHAMPIONS LEAGUE\" else if [posicion] = \"4\" then \"UEFA CHAMPIONS LEAGUE\" else if [posicion] = \"18\" then \"DESCENSO\" else if [posicion] = \"19\" then \"DESCENSO\" else if [posicion] = \"20\" then \"DESCENSO\" else \"PERMANENCIA\") in #\"Columna condicional insertada\";\r\n",
+			"documentLocale": "en-us"
+		}
+	}
+}
