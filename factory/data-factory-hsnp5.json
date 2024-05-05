@@ -1,0 +1,9 @@
+{
+	"name": "data-factory-hsnp5",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "6b9328f2-6647-4f07-86a5-4d2b5314deff",
+		"tenantId": "a7bc5300-92fc-4ae4-ac76-154a4799f135"
+	}
+}
