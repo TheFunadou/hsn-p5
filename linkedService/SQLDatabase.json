@@ -1,0 +1,12 @@
+{
+	"name": "SQLDatabase",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "AzureSqlDatabase",
+		"typeProperties": {
+			"connectionString": "integrated security=False;encrypt=True;connection timeout=30;data source=practica5hsn-jbc.database.windows.net;initial catalog=hsn-practica5;user id=joelbaez",
+			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkRBVEFGQUNUT1JZQDlFMDZCQzI0LUE3RkQtNENCRC04QkVBLUQzRTRCMUIyMTQ1MF8yZGU4OGQ3Mi0wZGFiLTRkOTQtOTVkOC0yOTlkOTQ3YzI5ZGEiDQp9"
+		}
+	}
+}
